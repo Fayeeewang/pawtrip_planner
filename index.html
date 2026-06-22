@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PawTrip Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <a class="brand" href="#" aria-label="PawTrip Planner home">
+          <span class="brand-mark">P</span>
+          <span>PawTrip Planner</span>
+        </a>
+        <a class="nav-link" href="#planner">Start planning</a>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Pet-friendly travel made simple</p>
+          <h1>Plan your next pet-friendly trip in seconds.</h1>
+          <p class="hero-description">
+            Discover nearby dog-friendly cafes, restaurants, parks, hotels, photo spots, and build a simple daily itinerary in one place.
+          </p>
+
+          <form class="search-card" id="search-form">
+            <label for="destination">Current location or destination city</label>
+            <div class="search-row">
+              <input
+                id="destination"
+                name="destination"
+                type="text"
+                autocomplete="off"
+                placeholder="Or enter destination city, e.g. Edmonton"
+              >
+              <button type="button" class="secondary-button" id="use-location">
+                Use my current location
+              </button>
+              <button type="submit" class="primary-button">Search places</button>
+            </div>
+
+            <fieldset>
+              <legend>Choose keywords</legend>
+              <div class="keyword-list" id="keyword-list">
+                <button type="button" class="keyword-chip is-active" data-keyword="cafe">cafe</button>
+                <button type="button" class="keyword-chip is-active" data-keyword="restaurant">restaurant</button>
+                <button type="button" class="keyword-chip is-active" data-keyword="park">park</button>
+                <button type="button" class="keyword-chip" data-keyword="hotel">hotel</button>
+                <button type="button" class="keyword-chip" data-keyword="photo spots">photo spots</button>
+                <button type="button" class="keyword-chip" data-keyword="budget-friendly">budget-friendly</button>
+                <button type="button" class="keyword-chip" data-keyword="indoor">indoor</button>
+                <button type="button" class="keyword-chip is-active" data-keyword="outdoor">outdoor</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <aside class="hero-panel" aria-label="Trip preview">
+          <div class="floating-card">
+            <span class="emoji" aria-hidden="true">Paw</span>
+            <div>
+              <strong>Smart pet filters</strong>
+              <p>Dog-friendly tags, patio notes, park access, and route-ready ideas.</p>
+            </div>
+          </div>
+          <div class="route-preview">
+            <div class="route-dot"></div>
+            <div class="route-line"></div>
+            <div class="route-dot"></div>
+            <div class="route-line"></div>
+            <div class="route-dot"></div>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main id="planner" class="planner-shell">
+      <section class="planner-header">
+        <div>
+          <p class="eyebrow">Discover</p>
+          <h2 id="results-title">Pet-friendly places near Edmonton</h2>
+        </div>
+        <button class="primary-button" id="generate-plan">Generate Trip Plan</button>
+      </section>
+
+      <p class="status-message" id="status-message" role="status" aria-live="polite">
+        Showing mock recommendations for a dog-friendly day out.
+      </p>
+
+      <section class="planner-layout">
+        <div class="places-panel">
+          <div class="section-heading">
+            <h3>Recommended places</h3>
+            <span id="result-count">0 places</span>
+          </div>
+          <div class="place-list" id="place-list"></div>
+        </div>
+
+        <aside class="map-panel" aria-label="Map preview">
+          <div class="map-toolbar">
+            <span>Map area</span>
+            <span id="map-location">Edmonton</span>
+          </div>
+          <div class="mock-map" id="mock-map"></div>
+        </aside>
+      </section>
+
+      <section class="itinerary-card" id="itinerary-card" hidden>
+        <div class="section-heading">
+          <h3>Simple pet-friendly itinerary</h3>
+          <span>1 day plan</span>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
