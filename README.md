@@ -6,10 +6,11 @@ A pet-friendly travel planner prototype that helps users discover nearby dog-fri
 
 - Landing page with destination search and pet travel keywords
 - Browser geolocation entry point for "Use my current location"
-- Manual city search for mock destinations such as Edmonton, Vancouver, and Cancun
-- Pet-friendly place cards with name, category, rating, address, distance, tags, and short descriptions
+- Manual city search for mock destinations such as Edmonton, Vancouver, Calgary, and Cancun
+- Input normalization for examples like `vancouver`, `Vancouver`, and `Vancouver, BC`
+- Pet-friendly place cards with name, category, rating, address, distance, tags, short descriptions, and image URL placeholders
 - One-click trip plan generator for morning, afternoon, and evening
-- Two-column planner layout with recommendation cards and a mock map area
+- Two-column planner layout with recommendation cards, mock map center, and city-specific markers
 
 ## Run locally
 
@@ -25,4 +26,11 @@ Then visit `http://localhost:8000`.
 
 ## Notes
 
-This 1.0 prototype intentionally uses mock place data and does not call an AI or maps API yet.
+This prototype intentionally uses API-ready mock place data and does not call an AI, Google Places, or maps API yet.
+
+Supported demo cities:
+
+- Edmonton, Alberta
+- Calgary, Alberta
+- Vancouver, British Columbia
+- Cancun, Quintana Roo
