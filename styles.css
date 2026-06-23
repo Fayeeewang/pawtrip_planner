@@ -369,6 +369,15 @@ fieldset {
   padding: 18px;
 }
 
+.place-image {
+  min-height: 150px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  background-color: var(--bg-soft);
+  background-position: center;
+  background-size: cover;
+}
+
 .place-card-header,
 .place-meta,
 .tag-list {
@@ -442,6 +451,10 @@ fieldset {
   background-size: 44px 44px, 44px 44px, auto, auto, auto;
 }
 
+.mock-map.is-empty .map-road {
+  opacity: 0.36;
+}
+
 .map-road {
   position: absolute;
   border-radius: 999px;
@@ -482,6 +495,34 @@ fieldset {
 
 .map-pin span {
   transform: rotate(45deg);
+}
+
+.map-center-label,
+.map-empty {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgba(31, 42, 36, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  box-shadow: 0 12px 28px rgba(58, 39, 20, 0.1);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.map-center-label {
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 12px;
+}
+
+.map-empty {
+  top: 50%;
+  left: 50%;
+  width: min(320px, calc(100% - 36px));
+  padding: 18px;
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 .itinerary-card {
