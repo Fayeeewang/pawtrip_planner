@@ -6,30 +6,72 @@
     <title>PawTrip Planner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="hero">
-      <nav class="nav">
+    <section class="onboarding-screen" id="onboarding-screen" aria-labelledby="welcome-title">
+      <div class="welcome-visual" aria-label="Samoyed travel inspired hero">
+        <div class="welcome-image">
+          <div class="sun"></div>
+          <div class="mountain mountain-one"></div>
+          <div class="mountain mountain-two"></div>
+          <div class="road"></div>
+          <div class="samoyed-card">
+            <span class="dog-face" aria-hidden="true"></span>
+            <div>
+              <strong>Samoyed travel mode</strong>
+              <p>Warm routes, scenic stops, and places your pet can actually enjoy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="welcome-content">
         <a class="brand" href="#" aria-label="PawTrip Planner home">
           <span class="brand-mark">P</span>
           <span>PawTrip Planner</span>
         </a>
-        <a class="nav-link" href="#planner">Start planning</a>
-      </nav>
 
-      <section class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Pet-friendly travel made simple</p>
-          <h1>Plan your next pet-friendly trip in seconds.</h1>
-          <p class="hero-description">
-            Discover nearby dog-friendly cafes, restaurants, parks, hotels, photo spots, and build a simple daily itinerary in one place.
+        <div class="welcome-copy">
+          <p class="eyebrow">Pet-friendly discovery</p>
+          <h1 id="welcome-title">Plan your next pawfect trip.</h1>
+          <p class="welcome-description">
+            Choose the travel vibe, tell us where you are headed, and explore pet-friendly places on a map-first planner.
           </p>
+        </div>
 
-          <form class="search-card" id="search-form">
-            <label for="destination">Current location or destination city</label>
-            <div class="search-row">
+        <form class="onboarding-card" id="onboarding-form">
+          <fieldset>
+            <legend>Please choose your travel features</legend>
+            <div class="chip-grid" id="feature-chips">
+              <button type="button" class="selection-chip is-active" data-keyword="dog-friendly">pet-friendly</button>
+              <button type="button" class="selection-chip is-active" data-keyword="cafe">cafes</button>
+              <button type="button" class="selection-chip is-active" data-keyword="restaurant">restaurants</button>
+              <button type="button" class="selection-chip is-active" data-keyword="park">parks</button>
+              <button type="button" class="selection-chip" data-keyword="hotel">hotels</button>
+              <button type="button" class="selection-chip" data-keyword="photo spots">photo spots</button>
+              <button type="button" class="selection-chip" data-keyword="budget-friendly">budget-friendly</button>
+              <button type="button" class="selection-chip is-active" data-keyword="outdoor">outdoor</button>
+              <button type="button" class="selection-chip" data-keyword="scenic walks">scenic walks</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Must-have elements</legend>
+            <div class="chip-grid" id="preference-chips">
+              <button type="button" class="selection-chip" data-keyword="outdoor seating">outdoor seating</button>
+              <button type="button" class="selection-chip" data-keyword="off-leash">off-leash areas</button>
+              <button type="button" class="selection-chip" data-keyword="indoor">indoor friendly</button>
+              <button type="button" class="selection-chip" data-keyword="waterfront">water views</button>
+              <button type="button" class="selection-chip" data-keyword="brunch">brunch stops</button>
+              <button type="button" class="selection-chip" data-keyword="hotel">pet-friendly stay</button>
+            </div>
+          </fieldset>
+
+          <div class="destination-row">
+            <label for="destination">Destination</label>
+            <div class="destination-controls">
               <input
                 id="destination"
                 name="destination"
@@ -37,76 +79,77 @@
                 autocomplete="off"
                 placeholder="Try Edmonton, Vancouver, Calgary, or Cancun"
               >
-              <button type="button" class="secondary-button" id="use-location">
-                Use my current location
-              </button>
-              <button type="submit" class="primary-button">Search places</button>
-            </div>
-
-            <fieldset>
-              <legend>Choose keywords</legend>
-              <div class="keyword-list" id="keyword-list">
-                <button type="button" class="keyword-chip is-active" data-keyword="cafe">cafe</button>
-                <button type="button" class="keyword-chip is-active" data-keyword="restaurant">restaurant</button>
-                <button type="button" class="keyword-chip is-active" data-keyword="park">park</button>
-                <button type="button" class="keyword-chip" data-keyword="hotel">hotel</button>
-                <button type="button" class="keyword-chip" data-keyword="photo spots">photo spots</button>
-                <button type="button" class="keyword-chip" data-keyword="budget-friendly">budget-friendly</button>
-                <button type="button" class="keyword-chip" data-keyword="indoor">indoor</button>
-                <button type="button" class="keyword-chip is-active" data-keyword="outdoor">outdoor</button>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-
-        <aside class="hero-panel" aria-label="Trip preview">
-          <div class="floating-card">
-            <span class="emoji" aria-hidden="true">Paw</span>
-            <div>
-              <strong>Smart pet filters</strong>
-              <p>Dog-friendly tags, patio notes, park access, and route-ready ideas.</p>
+              <button type="button" class="secondary-button" id="use-location">Use my location</button>
             </div>
           </div>
-          <div class="route-preview">
-            <div class="route-dot"></div>
-            <div class="route-line"></div>
-            <div class="route-dot"></div>
-            <div class="route-line"></div>
-            <div class="route-dot"></div>
-          </div>
-        </aside>
-      </section>
-    </header>
 
-    <main id="planner" class="planner-shell">
-      <section class="planner-header">
-        <div>
-          <p class="eyebrow">Discover</p>
+          <p class="status-message" id="status-message" role="status" aria-live="polite">
+            Edmonton is loaded as the default demo city.
+          </p>
+
+          <button type="submit" class="primary-button start-button">Start Planning</button>
+        </form>
+      </main>
+    </section>
+
+    <main class="planner-app" id="planner-app" hidden>
+      <header class="planner-topbar">
+        <a class="brand compact" href="#" aria-label="PawTrip Planner home">
+          <span class="brand-mark">P</span>
+          <span>PawTrip</span>
+        </a>
+
+        <div class="planner-title">
+          <p class="eyebrow">Map-first planner</p>
           <h2 id="results-title">Pet-friendly places near Edmonton</h2>
         </div>
-        <button class="primary-button" id="generate-plan">Generate Trip Plan</button>
-      </section>
 
-      <p class="status-message" id="status-message" role="status" aria-live="polite">
-        Showing mock recommendations for a dog-friendly day out.
-      </p>
+        <div class="topbar-actions">
+          <button type="button" class="secondary-button compact-button" id="edit-preferences">Edit preferences</button>
+          <button type="button" class="primary-button compact-button" id="generate-plan">Build trip plan</button>
+        </div>
+      </header>
 
-      <section class="planner-layout">
-        <div class="places-panel">
-          <div class="section-heading">
-            <h3>Recommended places</h3>
+      <section class="planner-workspace" aria-label="PawTrip map planner">
+        <aside class="places-drawer" aria-label="Recommended places">
+          <div class="drawer-header">
+            <div>
+              <p class="eyebrow">Nearby picks</p>
+              <h3>Places for this trip</h3>
+            </div>
             <span id="result-count">0 places</span>
           </div>
-          <div class="place-list" id="place-list"></div>
-        </div>
 
-        <aside class="map-panel" aria-label="Map preview">
-          <div class="map-toolbar">
-            <span>Map area</span>
-            <span id="map-location">Edmonton</span>
-          </div>
-          <div class="mock-map" id="mock-map"></div>
+          <div class="selected-filters" id="selected-filters"></div>
+          <div class="place-list" id="place-list"></div>
         </aside>
+
+        <section class="map-stage" aria-label="Large map area">
+          <div class="map-toolbar">
+            <div>
+              <span class="map-label">Selected area</span>
+              <strong id="map-location">Edmonton</strong>
+            </div>
+            <span id="map-center">Map center loading</span>
+          </div>
+
+          <div class="mock-map large-map" id="mock-map" aria-label="Interactive mock map"></div>
+
+          <article class="place-preview" id="place-preview" hidden></article>
+
+          <section class="trip-panel" aria-label="Trip plan">
+            <div class="trip-panel-header">
+              <div>
+                <p class="eyebrow">Your trip</p>
+                <h3>Saved stops</h3>
+              </div>
+              <span id="trip-count">0 stops</span>
+            </div>
+            <div class="trip-list" id="trip-list">
+              <p class="empty-copy">Add places to build a simple pet-friendly route.</p>
+            </div>
+          </section>
+        </section>
       </section>
 
       <section class="itinerary-card" id="itinerary-card" hidden>
